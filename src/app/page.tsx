@@ -105,4 +105,16 @@ export default function Home() {
 
       {/* Achievements */}
       <section className="py-12">
-        <p className="section-title mb-8">
+        <p className="section-title mb-8">achievements</p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {achievements.map((a) => (
+            <div key={a.title} className="card">
+              <h3 className="font-mono text-sm font-semibold text-accent">{a.title}</h3>
+              <p className="mt-1 text-sm text-muted">{a.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

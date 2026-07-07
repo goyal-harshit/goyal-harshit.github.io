@@ -34,4 +34,8 @@ export default function Nav() {
           >
             github ↗
           </a>
-    
+        </div>
+      </nav>
+    </header>
+  );
+}
