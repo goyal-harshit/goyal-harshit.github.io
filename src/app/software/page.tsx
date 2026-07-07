@@ -11,6 +11,11 @@ export const metadata: Metadata = {
 
 const work = [
   {
+    title: 'Cadence Design Systems — EDA Software Intern (2025)',
+    detail:
+      'Software engineering inside the chip-design toolchain: built Python tooling to parse and analyze synthesized netlists (cell distribution, hierarchy stats, structural checks) and automated multi-step synthesis flows with TCL — replacing manual GUI iteration with scripted, repeatable runs.',
+  },
+  {
     title: 'PwC India — Technology Consulting Intern (2024)',
     detail:
       'Digitized financial workflows for a government agriculture platform serving a 130M+ farmer user base — requirements analysis, process mapping, and technology solution design at national scale.',
