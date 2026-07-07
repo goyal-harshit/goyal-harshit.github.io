@@ -14,19 +14,23 @@ export default function AboutPage() {
 
       <div className="mt-6 space-y-4 leading-relaxed text-fg/90">
         <p>
-          I’m an Electrical Engineering student at IIT Delhi (’26) working across two tracks that
-          usually don’t overlap: production-grade AI software and semiconductor design flows.
+          I’m an Electrical Engineering student at IIT Delhi (’26) who ships the kind of software
+          most students only prototype: authenticated, observable, Dockerized platforms with CI/CD
+          pipelines and live public demos — not notebooks and slide decks.
         </p>
         <p>
-          On the software side, I build full-stack AI systems — a quant research platform for
-          Indian equities, a codebase-intelligence engine backed by knowledge graphs, and a
-          gesture-driven image generation pipeline. All shipped with CI, Docker, auth, observability,
-          and live demos.
+          On the software side, I’ve deployed three full-stack AI systems: a quant research
+          platform for Indian equities with 20+ domain modules and a multi-LLM RAG assistant; a
+          codebase-intelligence engine that turns any Git repo into a queryable knowledge graph;
+          and a real-time gesture-to-image pipeline where you never type a prompt. Each one taught
+          me a different hard problem — reliability engineering under flaky data sources, hybrid
+          graph + vector retrieval, and streaming inference over webcam input.
         </p>
         <p>
-          On the silicon side, I interned at Cadence Design Systems running RTL-to-Pre-CTS synthesis
-          on Genus/Innovus and building Python and TCL tooling around the flow. The overlap is the
-          point: EDA is software engineering applied to chips.
+          On the silicon side, I interned at Cadence Design Systems running RTL-to-Pre-CTS
+          synthesis on Genus/Innovus and building Python and TCL tooling around the flow. The
+          overlap is deliberate: EDA is software engineering applied to chips, and I want to work
+          where the two meet — LLM platforms, developer tools, and EDA software.
         </p>
       </div>
 

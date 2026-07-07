@@ -1,6 +1,8 @@
 export const site = {
   name: 'Harshit Goyal',
-  tagline: 'I build production-grade AI systems and semiconductor tooling.',
+  tagline:
+    'I ship production-grade AI systems — and the semiconductor tooling underneath them.',
+  sub: 'Three deployed full-stack platforms with auth, observability, and CI/CD. EDA software experience at Cadence. Top-10 national ML competition rank.',
   role: 'Electrical Engineering, IIT Delhi ’26',
   email: 'harshitgoyal780p@gmail.com',
   github: 'https://github.com/goyal-harshit',
@@ -9,6 +11,13 @@ export const site = {
   resumeVlsi: '/resume/Harshit_Goyal_VLSI.pdf',
   url: 'https://goyal-harshit.github.io',
 };
+
+export const stats = [
+  { value: '3', label: 'deployed AI platforms' },
+  { value: '9th', label: 'nationally — FIFS ML Gameathon 2025' },
+  { value: 'AIR 530', label: 'JEE Advanced (top 0.2%)' },
+  { value: 'Cadence', label: 'EDA software internship' },
+];
 
 export type CaseStudySection = { heading: string; body: string[] };
 
@@ -30,7 +39,7 @@ export const projects: Project[] = [
     slug: 'quantai',
     title: 'QuantAI',
     oneLiner:
-      'India-first quant research platform for NSE/BSE equities — factor screener, backtester, portfolio tracker, Monte Carlo quant lab, and a multi-provider RAG-grounded AI research assistant.',
+      'A production quant research platform for Indian equities — 20+ domain modules, a multi-LLM RAG research assistant, circuit-breaker reliability, and full auth + observability. Live and free to use.',
     domains: ['Quant', 'Full-stack', 'AI/ML'],
     stack: [
       'FastAPI',
@@ -85,7 +94,7 @@ export const projects: Project[] = [
     slug: 'codebase-intelligence',
     title: 'Codebase Intelligence Platform',
     oneLiner:
-      'Ingests any Git repo into a knowledge graph + vector index; answers plain-English questions, detects architecture risks, and computes change-impact blast radius.',
+      'Turns any Git repo into a queryable knowledge graph — plain-English code Q&A, architecture risk detection, and change blast-radius computed in seconds. Parsed Flask in 0.28s.',
     domains: ['Dev-tools', 'AI/ML', 'Full-stack'],
     stack: [
       'tree-sitter',
@@ -140,7 +149,7 @@ export const projects: Project[] = [
     slug: 'intuitive-prompt-engine',
     title: 'IntuitivePromptEngine',
     oneLiner:
-      'Gesture-driven image generation: webcam → semantic intent inference → persistent Scene Graph → diffusion prompts. You never type a prompt.',
+      'Image generation with zero typing — a real-time webcam pipeline that infers creative intent from gesture and expression, compiles a persistent Scene Graph, and drives diffusion models.',
     domains: ['AI/ML', 'Computer Vision', 'HCI'],
     stack: [
       'Python',

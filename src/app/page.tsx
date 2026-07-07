@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
-import { achievements, experience, projects, site } from '@/lib/data';
+import { achievements, experience, projects, site, stats } from '@/lib/data';
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured);
@@ -10,13 +10,34 @@ export default function Home() {
       {/* Hero */}
       <section className="py-20 sm:py-28">
         <p className="section-title mb-4">whoami</p>
-        <h1 className="cursor-blink font-mono text-4xl font-bold sm:text-5xl">{site.name}</h1>
+        <h1 className="cursor-blink font-mono text-4xl font-bold sm:text-5xl">
+          <span className="text-gradient">{site.name}</span>
+        </h1>
         <p className="mt-3 font-mono text-sm text-muted">{site.role}</p>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-fg/90">{site.tagline}</p>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-          Full-stack AI platforms · LLM/RAG pipelines · knowledge-graph code analysis ·
-          RTL-to-Pre-CTS synthesis automation.
-        </p>
+        <p className="mt-6 max-w-2xl text-xl leading-relaxed text-fg">{site.tagline}</p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">{site.sub}</p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href={site.resumeSoftware} className="btn btn-primary">
+            resume: software/AI ↓
+          </a>
+          <a href={site.resumeVlsi} className="btn">
+            resume: VLSI ↓
+          </a>
+          <a href={`mailto:${site.email}`} className="btn">
+            contact
+          </a>
+        </div>
+
+        {/* Proof strip */}
+        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-surface px-4 py-4">
+              <p className="font-mono text-xl font-bold text-accent">{s.value}</p>
+              <p className="mt-1 text-xs leading-snug text-muted">{s.label}</p>
+            </div>
+          ))}
+        </div>
 
         {/* Dual-track CTAs */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -26,8 +47,8 @@ export default function Home() {
               Software / AI →
             </h2>
             <p className="mt-2 text-sm text-muted">
-              Production AI systems: quant platforms, codebase intelligence, gesture-driven
-              generation.
+              Three deployed platforms — quant research, codebase intelligence, gesture-driven
+              generation — each with auth, observability, CI/CD, and a live demo.
             </p>
           </Link>
           <Link href="/vlsi/" className="card group">
@@ -36,8 +57,8 @@ export default function Home() {
               VLSI / Semiconductor →
             </h2>
             <p className="mt-2 text-sm text-muted">
-              RTL-to-Pre-CTS synthesis at Cadence: Genus/Innovus flows, netlist tooling, TCL
-              automation.
+              RTL-to-Pre-CTS synthesis at Cadence Design Systems — Genus/Innovus flows, Python
+              netlist tooling, TCL automation.
             </p>
           </Link>
         </div>
