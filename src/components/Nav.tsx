@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { site } from '@/lib/data';
 
 const links = [
-  { href: '/projects/', label: 'projects' },
+  { href: '/software/', label: 'software' },
   { href: '/vlsi/', label: 'vlsi' },
+  { href: '/projects/', label: 'projects' },
   { href: '/about/', label: 'about' },
 ];
 
@@ -33,8 +34,4 @@ export default function Nav() {
           >
             github ↗
           </a>
-        </div>
-      </nav>
-    </header>
-  );
-}
+    

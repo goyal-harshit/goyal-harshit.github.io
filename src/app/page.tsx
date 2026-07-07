@@ -41,7 +41,7 @@ export default function Home() {
 
         {/* Dual-track CTAs */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          <Link href="/projects/" className="card group">
+          <Link href="/software/" className="card group">
             <p className="font-mono text-xs text-muted">track 01</p>
             <h2 className="mt-1 font-mono text-xl font-semibold group-hover:text-accent">
               Software / AI →
@@ -82,12 +82,22 @@ export default function Home() {
         <p className="section-title mb-8">experience</p>
         <div className="space-y-4">
           {experience.map((e) => (
-            <div key={e.company} className="card flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <div>
-                <h3 className="font-semibold">{e.company}</h3>
-                <p className="text-sm text-muted">{e.role}</p>
+            <div key={e.company} className="card">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <div>
+                  <h3 className="font-semibold">{e.company}</h3>
+                  <p className="text-sm text-muted">{e.role}</p>
+                </div>
+                <span className="font-mono text-xs text-muted">{e.period}</span>
               </div>
-              <span className="font-mono text-xs text-muted">{e.period}</span>
+              <ul className="mt-3 space-y-1.5">
+                {e.points.map((p) => (
+                  <li key={p} className="flex gap-3 text-sm text-fg/90">
+                    <span className="font-mono text-accent">▸</span>
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -95,16 +105,4 @@ export default function Home() {
 
       {/* Achievements */}
       <section className="py-12">
-        <p className="section-title mb-8">achievements</p>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {achievements.map((a) => (
-            <div key={a.title} className="card">
-              <h3 className="font-mono text-sm font-semibold text-accent">{a.title}</h3>
-              <p className="mt-1 text-sm text-muted">{a.detail}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
-  );
-}
+        <p className="section-title mb-8">
