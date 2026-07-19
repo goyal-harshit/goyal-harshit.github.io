@@ -1,9 +1,18 @@
 import type { Metadata } from 'next';
-import { achievements, experience, site, skills } from '@/lib/data';
+import ContactRow from '@/components/ContactRow';
+import {
+  achievements,
+  contactLinks,
+  experience,
+  personal,
+  site,
+  skills,
+} from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'About Harshit Goyal — Electrical Engineering at IIT Delhi, Software/AI and VLSI engineer.',
+  title: 'About & Contact',
+  description:
+    'Harshit Goyal — Electrical Engineering at IIT Delhi, currently training vision-language models at Samsung R&D. Software/AI and VLSI engineer. Get in touch.',
 };
 
 export default function AboutPage() {
@@ -14,28 +23,30 @@ export default function AboutPage() {
 
       <div className="mt-6 space-y-4 leading-relaxed text-fg/90">
         <p>
-          I’m an Electrical Engineering student at IIT Delhi (’26) who ships the kind of software
-          most students only prototype: authenticated, observable, Dockerized platforms with CI/CD
-          pipelines and live public demos — not notebooks and slide decks.
+          I’m an Electrical Engineering student at IIT Delhi (’26). I started out learning how
+          chips are designed and ended up spending most of my time writing the software that makes
+          things usable — which turns out to be the same instinct pointed at two different layers
+          of the stack.
         </p>
         <p>
-          On the software side, I’ve deployed three full-stack AI systems: a quant research
-          platform for Indian equities with 20+ domain modules and a multi-LLM RAG assistant; a
-          codebase-intelligence engine that turns any Git repo into a queryable knowledge graph;
-          and a real-time gesture-to-image pipeline where you never type a prompt. Each one taught
-          me a different hard problem — reliability engineering under flaky data sources, hybrid
-          graph + vector retrieval, and streaming inference over webcam input.
+          Right now I’m at <span className="text-fg">Samsung R&amp;D Institute, Delhi</span>,
+          training and fine-tuning vision-language models for a new multimodal product capability.
+          I was hired onto the Software Development Engineer track and am starting with a six-month
+          engineering internship.
         </p>
         <p>
-          I'm currently an AI Engineer Intern at Samsung R&D Institute Delhi, training and
-          fine-tuning Vision-Language Models and building a custom VLM-based solution for a
-          market-driven product need.
+          Before that I built three full-stack AI platforms on my own: a quant research platform
+          for Indian equities with a multi-LLM RAG assistant, a codebase-intelligence engine that
+          turns any Git repo into a queryable knowledge graph, and a real-time gesture-to-image
+          pipeline where you never type a prompt. Each taught me a different hard problem —
+          reliability engineering against flaky data sources, hybrid graph and vector retrieval,
+          and streaming inference over webcam input. All three are live and open source.
         </p>
         <p>
           On the silicon side, I interned at Cadence Design Systems running RTL-to-Pre-CTS
-          synthesis on Genus/Innovus and building Python and TCL tooling around the flow. The
-          overlap is deliberate: EDA is software engineering applied to chips, and I want to work
-          where the two meet — LLM platforms, developer tools, and EDA software.
+          synthesis on Genus and Innovus and building Python and TCL tooling around the flow. The
+          overlap is deliberate: EDA is software engineering applied to chips, and the work I want
+          sits where the two meet.
         </p>
       </div>
 
@@ -46,10 +57,23 @@ export default function AboutPage() {
         <a href={site.resumeVlsi} className="btn">
           resume: VLSI ↓
         </a>
-        <a href={`mailto:${site.email}`} className="btn">
-          email me
+        <a href="#contact" className="btn">
+          get in touch ↓
         </a>
       </div>
+
+      {/* Beyond the code */}
+      <section className="mt-16">
+        <h2 className="section-title mb-6">beyond the code</h2>
+        <div className="space-y-4">
+          {personal.map((item) => (
+            <div key={item.heading} className="card">
+              <h3 className="font-mono text-sm font-semibold text-accent">{item.heading}</h3>
+              <p className="mt-2 leading-relaxed text-fg/90">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-14">
         <h2 className="section-title mb-6">skills</h2>
@@ -104,6 +128,26 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="mt-16 scroll-mt-20">
+        <h2 className="section-title mb-6">contact</h2>
+        <p className="leading-relaxed text-fg/90">
+          I’m open to conversations about AI/ML engineering, developer tooling, and EDA software —
+          or anything you think I’d find interesting. The fastest way to reach me is email.
+        </p>
+        <div className="card mt-6 py-2">
+          {contactLinks.map((c) => (
+            <ContactRow
+              key={c.label}
+              label={c.label}
+              value={c.value}
+              href={c.href}
+              copy={c.copy}
+            />
+          ))}
+        </div>
       </section>
     </div>
   );

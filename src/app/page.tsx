@@ -24,9 +24,9 @@ export default function Home() {
           <a href={site.resumeVlsi} className="btn">
             resume: VLSI ↓
           </a>
-          <a href={`mailto:${site.email}`} className="btn">
+          <Link href="/about/#contact" className="btn">
             contact
-          </a>
+          </Link>
         </div>
 
         {/* Proof strip */}

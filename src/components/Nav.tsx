@@ -6,6 +6,7 @@ const links = [
   { href: '/vlsi/', label: 'vlsi' },
   { href: '/projects/', label: 'projects' },
   { href: '/about/', label: 'about' },
+  { href: '/about/#contact', label: 'contact' },
 ];
 
 export default function Nav() {

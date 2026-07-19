@@ -1,8 +1,8 @@
 export const site = {
   name: 'Harshit Goyal',
   tagline:
-    'I ship production-grade AI systems — and the semiconductor tooling underneath them.',
-  sub: 'Three deployed full-stack platforms with auth, observability, and CI/CD. Currently fine-tuning VLMs at Samsung R&D. EDA software experience at Cadence. Top-10 national ML competition rank.',
+    'I build AI systems end to end: the model, the infrastructure it runs on, and the interface people actually touch.',
+  sub: 'Right now I am training vision-language models at Samsung R&D. Before that, RTL-to-placement synthesis flows at Cadence. In between, three AI platforms I designed and deployed on my own — all live, all open source.',
   role: 'Electrical Engineering, IIT Delhi ’26',
   email: 'harshitgoyal780p@gmail.com',
   github: 'https://github.com/goyal-harshit',
@@ -216,12 +216,12 @@ export const projects: Project[] = [
 export const experience = [
   {
     company: 'Samsung R&D Institute Delhi',
-    role: 'AI Engineer Intern',
+    role: 'Software Development Engineer Intern',
     period: 'Jul 2026 – Present',
     track: 'AI',
     points: [
-      'Training and fine-tuning Vision-Language Models (VLMs)',
-      'Building a custom VLM-based solution for a market-driven product need — scope and framework still being defined early in the internship',
+      'Training and fine-tuning vision-language models (VLMs) for a custom multimodal solution addressing an unmet product need',
+      'Hired onto the Software Development Engineer track, beginning with a six-month engineering internship',
     ],
   },
   {
@@ -289,4 +289,25 @@ export const achievements = [
     title: 'FIFS ML Gameathon 2025',
     detail: '9th nationally (Google Cloud & Dream11)',
   },
+];
+
+export const personal = [
+  {
+    heading: 'Photography',
+    body: 'I shoot constantly — mostly landscapes and whatever I find while travelling. It has made me better at engineering than I expected: both are mostly about noticing what everyone else walked past.',
+  },
+  {
+    heading: 'Travel',
+    body: 'Mountains or beaches is a question I refuse to answer. They are not the same kind of good, and I would rather keep both than rank them.',
+  },
+  {
+    heading: 'What actually gets me going',
+    body: 'A problem I have not seen before. I would rather spend a week on something nobody has a library for than a day on something already solved — most of what I have built started as exactly that kind of itch.',
+  },
+];
+
+export const contactLinks = [
+  { label: 'email', value: 'harshitgoyal780p@gmail.com', href: 'mailto:harshitgoyal780p@gmail.com', copy: true },
+  { label: 'linkedin', value: 'in/goyal-harshit-iitd', href: 'https://www.linkedin.com/in/goyal-harshit-iitd/', copy: false },
+  { label: 'github', value: '@goyal-harshit', href: 'https://github.com/goyal-harshit', copy: false },
 ];
