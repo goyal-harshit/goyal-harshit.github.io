@@ -27,6 +27,11 @@ export default function AboutPage() {
           graph + vector retrieval, and streaming inference over webcam input.
         </p>
         <p>
+          I'm currently an AI Engineer Intern at Samsung R&D Institute Delhi, training and
+          fine-tuning Vision-Language Models and building a custom VLM-based solution for a
+          market-driven product need.
+        </p>
+        <p>
           On the silicon side, I interned at Cadence Design Systems running RTL-to-Pre-CTS
           synthesis on Genus/Innovus and building Python and TCL tooling around the flow. The
           overlap is deliberate: EDA is software engineering applied to chips, and I want to work

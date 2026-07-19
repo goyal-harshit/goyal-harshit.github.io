@@ -2,7 +2,7 @@ export const site = {
   name: 'Harshit Goyal',
   tagline:
     'I ship production-grade AI systems — and the semiconductor tooling underneath them.',
-  sub: 'Three deployed full-stack platforms with auth, observability, and CI/CD. EDA software experience at Cadence. Top-10 national ML competition rank.',
+  sub: 'Three deployed full-stack platforms with auth, observability, and CI/CD. Currently fine-tuning VLMs at Samsung R&D. EDA software experience at Cadence. Top-10 national ML competition rank.',
   role: 'Electrical Engineering, IIT Delhi ’26',
   email: 'harshitgoyal780p@gmail.com',
   github: 'https://github.com/goyal-harshit',
@@ -14,9 +14,9 @@ export const site = {
 
 export const stats = [
   { value: '3', label: 'deployed AI platforms' },
+  { value: 'Samsung R&D', label: 'AI engineer intern — VLM fine-tuning' },
   { value: '9th', label: 'nationally — FIFS ML Gameathon 2025' },
   { value: 'AIR 530', label: 'JEE Advanced (top 0.2%)' },
-  { value: 'Cadence', label: 'EDA software internship' },
 ];
 
 export type CaseStudySection = { heading: string; body: string[] };
@@ -214,6 +214,16 @@ export const projects: Project[] = [
 ];
 
 export const experience = [
+  {
+    company: 'Samsung R&D Institute Delhi',
+    role: 'AI Engineer Intern',
+    period: 'Jul 2026 – Present',
+    track: 'AI',
+    points: [
+      'Training and fine-tuning Vision-Language Models (VLMs)',
+      'Building a custom VLM-based solution for a market-driven product need — scope and framework still being defined early in the internship',
+    ],
+  },
   {
     company: 'Cadence Design Systems',
     role: 'ASIC Synthesis / EDA Software Intern',
