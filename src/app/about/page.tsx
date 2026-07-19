@@ -29,10 +29,9 @@ export default function AboutPage() {
           of the stack.
         </p>
         <p>
-          Right now I’m at <span className="text-fg">Samsung R&amp;D Institute, Delhi</span>,
-          training and fine-tuning vision-language models for a new multimodal product capability.
-          I was hired onto the Software Development Engineer track and am starting with a six-month
-          engineering internship.
+          Right now I’m a Software Development Engineer Intern at{' '}
+          <span className="text-fg">Samsung R&amp;D Institute, Delhi</span>, training and
+          fine-tuning vision-language models for a new multimodal product capability.
         </p>
         <p>
           Before that I built three full-stack AI platforms on my own: a quant research platform

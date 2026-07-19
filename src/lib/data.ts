@@ -221,7 +221,6 @@ export const experience = [
     track: 'AI',
     points: [
       'Training and fine-tuning vision-language models (VLMs) for a custom multimodal solution addressing an unmet product need',
-      'Hired onto the Software Development Engineer track, beginning with a six-month engineering internship',
     ],
   },
   {
