@@ -1,18 +1,46 @@
 import Link from 'next/link';
 import type { Project } from '@/lib/data';
 
+const MAX_VISIBLE_STACK = 6;
+
 export default function ProjectCard({ project }: { project: Project }) {
-  const inner = (
-    <article className="card flex h-full flex-col">
-      <div className="mb-2 flex items-baseline justify-between gap-3">
-        <h3 className="font-mono text-lg font-semibold text-fg">{project.title}</h3>
-        <div className="flex shrink-0 gap-3 font-mono text-xs">
+  const visibleStack = project.stack.slice(0, MAX_VISIBLE_STACK);
+  const hiddenStackCount = project.stack.length - visibleStack.length;
+
+  return (
+    <article className="card group relative flex h-full flex-col">
+      {/* Stretched link: makes the whole card clickable without nesting anchors. */}
+      {project.caseStudy && (
+        <Link
+          href={`/projects/${project.slug}/`}
+          aria-label={`Read the ${project.title} case study`}
+          className="absolute inset-0 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        />
+      )}
+
+      <h3 className="font-mono text-lg font-semibold leading-snug text-fg [overflow-wrap:anywhere]">
+        {project.title}
+      </h3>
+
+      <p className="mt-2 text-sm leading-relaxed text-muted">{project.oneLiner}</p>
+
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {visibleStack.map((s) => (
+          <span key={s} className="chip">
+            {s}
+          </span>
+        ))}
+        {hiddenStackCount > 0 && <span className="chip">+{hiddenStackCount}</span>}
+      </div>
+
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-5 font-mono text-xs">
+        <div className="flex gap-3">
           {project.demo && (
             <a
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-accent hover:underline"
+              className="relative text-accent hover:underline"
             >
               demo ↗
             </a>
@@ -22,33 +50,16 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-accent"
+              className="relative text-muted transition-colors hover:text-accent"
             >
               code ↗
             </a>
           )}
         </div>
+        {project.caseStudy && (
+          <span className="text-accent group-hover:underline">read case study →</span>
+        )}
       </div>
-      <p className="mb-4 text-sm leading-relaxed text-muted">{project.oneLiner}</p>
-      <div className="mt-auto flex flex-wrap gap-1.5">
-        {project.stack.slice(0, 6).map((s) => (
-          <span key={s} className="chip">
-            {s}
-          </span>
-        ))}
-        {project.stack.length > 6 && <span className="chip">+{project.stack.length - 6}</span>}
-      </div>
-      {project.caseStudy && (
-        <p className="mt-4 font-mono text-xs text-accent">read case study →</p>
-      )}
     </article>
-  );
-
-  return project.caseStudy ? (
-    <Link href={`/projects/${project.slug}/`} className="block h-full">
-      {inner}
-    </Link>
-  ) : (
-    inner
   );
 }
